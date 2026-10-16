@@ -1,0 +1,14 @@
+[project]
+name = "ha-pulsar-nixie"
+version = "0.1.0"
+description = "Home Assistant integration for the Pulsar nixie clock"
+requires-python = ">=3.13"
+
+[dependency-groups]
+dev = [
+    "pytest-homeassistant-custom-component",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
