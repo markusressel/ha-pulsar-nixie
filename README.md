@@ -37,7 +37,8 @@ With [HACS](https://hacs.xyz/): add this repository as a custom repository (type
 "Pulsar nixie clock" and restart Home Assistant. Without HACS, copy `custom_components/pulsar_nixie` into the
 `custom_components` directory of your Home Assistant configuration.
 
-Then add the integration under Settings > Devices & services, with the IP address or hostname of the clock.
+Home Assistant discovers the clock (by its zeroconf announcement), as long as its hostname starts with "nixie".
+Otherwise add the integration under Settings > Devices & services, with the IP address or hostname of the clock.
 
 ## Development
 

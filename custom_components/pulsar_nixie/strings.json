@@ -9,46 +9,83 @@
         "data_description": {
           "host": "IP address or hostname, e.g. 192.168.2.170"
         }
+      },
+      "zeroconf_confirm": {
+        "description": "Add the nixie clock {name} ({host})?"
       }
     },
     "error": {
       "cannot_connect": "The clock could not be reached."
     },
     "abort": {
-      "already_configured": "This clock is already configured."
-    }
+      "already_configured": "This clock is already configured.",
+      "cannot_connect": "The clock could not be reached."
+    },
+    "flow_title": "{name}"
   },
   "entity": {
     "button": {
-      "sync_time": { "name": "Sync time" }
+      "sync_time": {
+        "name": "Sync time"
+      }
     },
     "light": {
-      "led": { "name": "LED backlight" }
+      "led": {
+        "name": "LED backlight"
+      }
     },
     "number": {
-      "temperature_correction": { "name": "Temperature correction" },
-      "led_night_brightness": { "name": "LED night brightness" },
-      "timer_hours": { "name": "Timer hours" },
-      "timer_minutes": { "name": "Timer minutes" },
-      "timer_seconds": { "name": "Timer seconds" }
+      "temperature_correction": {
+        "name": "Temperature correction"
+      },
+      "led_night_brightness": {
+        "name": "LED night brightness"
+      },
+      "timer_hours": {
+        "name": "Timer hours"
+      },
+      "timer_minutes": {
+        "name": "Timer minutes"
+      },
+      "timer_seconds": {
+        "name": "Timer seconds"
+      }
     },
     "select": {
-      "time_zone": { "name": "Time zone" },
+      "time_zone": {
+        "name": "Time zone"
+      },
       "hour_format": {
         "name": "Hour format",
-        "state": { "12h": "12 hours", "24h": "24 hours" }
+        "state": {
+          "12h": "12 hours",
+          "24h": "24 hours"
+        }
       },
       "date_format": {
         "name": "Date",
-        "state": { "off": "Off", "dd_mm": "dd.MM", "mm_dd": "MM.dd" }
+        "state": {
+          "off": "Off",
+          "dd_mm": "dd.MM",
+          "mm_dd": "MM.dd"
+        }
       },
       "temperature_unit": {
         "name": "Temperature",
-        "state": { "off": "Off", "celsius": "°C", "fahrenheit": "°F" }
+        "state": {
+          "off": "Off",
+          "celsius": "°C",
+          "fahrenheit": "°F"
+        }
       },
       "pressure_unit": {
         "name": "Pressure",
-        "state": { "off": "Off", "mbar": "mbar", "mmhg": "mm Hg", "inhg": "in Hg" }
+        "state": {
+          "off": "Off",
+          "mbar": "mbar",
+          "mmhg": "mm Hg",
+          "inhg": "in Hg"
+        }
       },
       "show_every": {
         "name": "Show every",
@@ -74,19 +111,31 @@
       },
       "digit_effect": {
         "name": "Digit effect",
-        "state": { "none": "None", "flip_all": "Flip all", "flip_sequence": "Flip in sequence" }
+        "state": {
+          "none": "None",
+          "flip_all": "Flip all",
+          "flip_sequence": "Flip in sequence"
+        }
       },
       "dot_mode": {
         "name": "Dot mode",
-        "state": { "off": "Off", "on": "On", "blink": "Blink" }
+        "state": {
+          "off": "Off",
+          "on": "On",
+          "blink": "Blink"
+        }
       },
       "cathode_protection_digit": {
         "name": "Cathode protection digit",
-        "state": { "all": "All" }
+        "state": {
+          "all": "All"
+        }
       },
       "cathode_protection_value": {
         "name": "Cathode protection value",
-        "state": { "all": "All" }
+        "state": {
+          "all": "All"
+        }
       },
       "cathode_protection_period": {
         "name": "Cathode protection period",
@@ -102,15 +151,29 @@
       }
     },
     "switch": {
-      "hour_beep": { "name": "Hour beep" },
-      "show_humidity": { "name": "Humidity" },
-      "timer": { "name": "Timer" },
-      "timer_alarm": { "name": "Timer alarm" },
-      "cathode_protection": { "name": "Cathode protection" }
+      "hour_beep": {
+        "name": "Hour beep"
+      },
+      "show_humidity": {
+        "name": "Humidity"
+      },
+      "timer": {
+        "name": "Timer"
+      },
+      "timer_alarm": {
+        "name": "Timer alarm"
+      },
+      "cathode_protection": {
+        "name": "Cathode protection"
+      }
     },
     "time": {
-      "night_from": { "name": "Night from" },
-      "night_to": { "name": "Night to" }
+      "night_from": {
+        "name": "Night from"
+      },
+      "night_to": {
+        "name": "Night to"
+      }
     }
   }
 }
