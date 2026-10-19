@@ -1,4 +1,4 @@
-"""Constants of the Pulsar nixie clock integration."""
+"""Constants of the PulsarNixieClock integration."""
 
 from datetime import timedelta
 

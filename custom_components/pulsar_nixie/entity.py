@@ -1,4 +1,4 @@
-"""Base entity of the Pulsar nixie clock integration."""
+"""Base entity of the PulsarNixieClock integration."""
 
 from __future__ import annotations
 

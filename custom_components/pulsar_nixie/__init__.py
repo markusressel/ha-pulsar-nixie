@@ -1,4 +1,4 @@
-"""The Pulsar nixie clock integration: its settings, through the clock's local HTTP API."""
+"""The PulsarNixieClock integration: its settings, through the clock's local HTTP API."""
 
 from __future__ import annotations
 
