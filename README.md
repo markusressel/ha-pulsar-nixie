@@ -3,6 +3,9 @@
 A custom integration for the PulsarNixieClock. It controls the settings of the clock's configuration page through
 the same local HTTP API, without the cloud.
 
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/dc26b52f-6da8-4b92-8503-02cc8602415c" />
+
+
 ## Entities
 
 | Entity                                                                                                  | Setting of the configuration page        |
