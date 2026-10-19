@@ -1,6 +1,6 @@
 # PulsarNixieClock for Home Assistant
 
-A custom integration for the Pulsar nixie clock. It controls the settings of the clock's configuration page through
+A custom integration for the PulsarNixieClock. It controls the settings of the clock's configuration page through
 the same local HTTP API, without the cloud.
 
 ## Entities
@@ -34,7 +34,7 @@ Tested with firmware `6c3sq-1.2.0`.
 ## Installation
 
 With [HACS](https://hacs.xyz/): add this repository as a custom repository (type "Integration"), install
-"Pulsar nixie clock" and restart Home Assistant. Without HACS, copy `custom_components/pulsar_nixie` into the
+"PulsarNixieClock" and restart Home Assistant. Without HACS, copy `custom_components/pulsar_nixie` into the
 `custom_components` directory of your Home Assistant configuration.
 
 Home Assistant discovers the clock (by its zeroconf announcement), as long as its hostname starts with "nixie".
