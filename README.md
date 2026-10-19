@@ -5,6 +5,8 @@ the same local HTTP API, without the cloud.
 
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/dc26b52f-6da8-4b92-8503-02cc8602415c" />
 
+Product Link: https://www.etsy.com/de-en/listing/1688699031/nixie-tube-clock-pulsar-in-16-6-tubes
+
 
 ## Entities
 
