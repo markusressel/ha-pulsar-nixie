@@ -1,4 +1,4 @@
-# Pulsar nixie clock for Home Assistant
+# PulsarNixieClock for Home Assistant
 
 A custom integration for the Pulsar nixie clock. It controls the settings of the clock's configuration page through
 the same local HTTP API, without the cloud.
