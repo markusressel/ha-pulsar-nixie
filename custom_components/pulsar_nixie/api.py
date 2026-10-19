@@ -1,4 +1,4 @@
-"""Client for the local HTTP API of the Pulsar nixie clock (the API behind its configuration page)."""
+"""Client for the local HTTP API of the PulsarNixieClock (the API behind its configuration page)."""
 
 from __future__ import annotations
 

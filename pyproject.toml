@@ -1,7 +1,7 @@
 [project]
 name = "ha-pulsar-nixie"
 version = "0.1.0"
-description = "Home Assistant integration for the Pulsar nixie clock"
+description = "Home Assistant integration for the PulsarNixieClock"
 requires-python = ">=3.13"
 
 [dependency-groups]

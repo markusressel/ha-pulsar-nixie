@@ -1,6 +1,6 @@
 {
   "domain": "pulsar_nixie",
-  "name": "Pulsar nixie clock",
+  "name": "PulsarNixieClock",
   "codeowners": [
     "@markusressel"
   ],

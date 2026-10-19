@@ -1,5 +1,5 @@
 {
-  "name": "Pulsar nixie clock",
+  "name": "PulsarNixieClock",
   "homeassistant": "2025.2.0",
   "render_readme": true
 }
