@@ -38,6 +38,12 @@ SELECTS: tuple[PulsarNixieSelectDescription, ...] = (
         values={"12h": 0, "24h": 1},
     ),
     PulsarNixieSelectDescription(
+        key="lamps_at_night",
+        group=SettingsGroup.DISPLAY,
+        field="night_hv_off",
+        values={"dimmed": 0, "off": 1},
+    ),
+    PulsarNixieSelectDescription(
         key="date_format",
         group=SettingsGroup.DISPLAY,
         field="display_date",

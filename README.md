@@ -9,7 +9,7 @@ the same local HTTP API, without the cloud.
 |---------------------------------------------------------------------------------------------------------|------------------------------------------|
 | Select: time zone, hour format                                                                          | Time settings                            |
 | Button: sync time                                                                                       | Time settings: "Sync time"               |
-| Select: date, temperature, pressure, show every, nixie effect, digit effect, dot mode                   | Settings                                 |
+| Select: lamps at night, date, temperature, pressure, show every, nixie effect, digit effect, dot mode   | Settings                                 |
 | Switch: hour beep, humidity                                                                             | Settings                                 |
 | Number: temperature correction                                                                          | Settings                                 |
 | Time: night from, night to                                                                              | Settings                                 |
@@ -29,7 +29,7 @@ Notes:
 - The LED light turns on again with the effect it had before it was turned off. Choosing a color switches to
   "Static color" unless the effect shows the color ("Static color", "Fade").
 
-Tested with firmware `6c3sq-1.2.0`.
+Tested with firmware `6c3sq-1.4.0`.
 
 ## Installation
 

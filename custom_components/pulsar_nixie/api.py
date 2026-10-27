@@ -38,6 +38,7 @@ SAVED_FIELDS: dict[SettingsGroup, tuple[str, ...]] = {
     SettingsGroup.DISPLAY: (
         "night_from",
         "night_to",
+        "night_hv_off",
         "display_date",
         "display_temp",
         "temp_corr",
