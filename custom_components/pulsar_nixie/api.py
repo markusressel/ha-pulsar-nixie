@@ -62,11 +62,13 @@ class PulsarNixieError(Exception):
 
 @dataclass
 class PulsarNixieState:
-    """Everything the clock reports: the settings by group, and its firmware version."""
+    """Everything the clock reports: the settings by group, its sensor readings and its firmware version."""
 
     settings: dict[SettingsGroup, dict[str, Any]]
     version: str
     hostname: str | None
+    # None for firmware without the monitor page
+    sensors: dict[str, Any] | None = None
 
 
 class PulsarNixieClient:
@@ -88,7 +90,14 @@ class PulsarNixieClient:
             version = await self._get("/get-version")
             # only the hostname is used: the network settings also contain the Wi-Fi in reach
             network = await self._get("/get-network-settings")
-        return PulsarNixieState(settings=settings, version=version["version"], hostname=network.get("hostname"))
+            try:
+                sensors = await self._get("/api/sensors")
+            except PulsarNixieError:
+                # the settings are still worth showing
+                sensors = None
+        return PulsarNixieState(
+            settings=settings, version=version["version"], hostname=network.get("hostname"), sensors=sensors
+        )
 
     async def get_version(self) -> str:
         async with self._lock:

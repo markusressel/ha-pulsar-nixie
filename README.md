@@ -12,6 +12,7 @@ Product Link: https://www.etsy.com/de-en/listing/1688699031/nixie-tube-clock-pul
 
 | Entity                                                                                                  | Setting of the configuration page        |
 |---------------------------------------------------------------------------------------------------------|------------------------------------------|
+| Sensor: temperature, humidity, pressure; Wi-Fi signal (disabled by default)                             | Monitor page (firmware 1.4.0 and later)  |
 | Select: time zone, hour format                                                                          | Time settings                            |
 | Button: sync time                                                                                       | Time settings: "Sync time"               |
 | Select: lamps at night, date, temperature, pressure, show every, nixie effect, digit effect, dot mode   | Settings                                 |

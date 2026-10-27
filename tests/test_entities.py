@@ -8,7 +8,7 @@ from homeassistant.exceptions import HomeAssistantError
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 from pytest_homeassistant_custom_component.test_util.aiohttp import AiohttpClientMocker
 
-from .conftest import URL, saved_forms
+from .conftest import URL, mock_clock, saved_forms
 
 
 @pytest.fixture
@@ -34,6 +34,25 @@ async def test_entities_show_the_settings_of_the_clock(hass: HomeAssistant, setu
     assert led.attributes["effect"] == "Rainbow"
     assert led.attributes["brightness"] == 255
     assert led.attributes["rgb_color"] == (255, 0, 0)
+
+
+async def test_sensors_show_the_readings_of_the_clock(hass: HomeAssistant, setup) -> None:
+    assert hass.states.get("sensor.nixie_clock_temperature").state == "25.0"
+    assert hass.states.get("sensor.nixie_clock_humidity").state == "35.8"
+    assert hass.states.get("sensor.nixie_clock_pressure").state == "1014.2"
+
+
+async def test_sensors_are_unavailable_without_the_monitor_page(
+    hass: HomeAssistant, clock, config_entry: MockConfigEntry, aioclient_mock: AiohttpClientMocker
+) -> None:
+    aioclient_mock.clear_requests()
+    mock_clock(aioclient_mock, clock | {"/api/sensors": None})
+    config_entry.add_to_hass(hass)
+    assert await hass.config_entries.async_setup(config_entry.entry_id)
+    await hass.async_block_till_done()
+
+    assert hass.states.get("sensor.nixie_clock_temperature").state == "unavailable"
+    assert hass.states.get("select.nixie_clock_dot_mode").state == "off"
 
 
 async def test_a_change_saves_its_whole_group(
