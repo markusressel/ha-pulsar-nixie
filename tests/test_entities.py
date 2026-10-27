@@ -47,6 +47,7 @@ async def test_a_change_saves_its_whole_group(
         {
             "night_from": "22:00",
             "night_to": "07:00",
+            "night_hv_off": "0",
             "display_date": "1",
             "display_temp": "1",
             "temp_corr": "0",
@@ -60,6 +61,19 @@ async def test_a_change_saves_its_whole_group(
         }
     ]
     assert hass.states.get("select.nixie_clock_dot_mode").state == "blink"
+
+
+async def test_lamps_at_night_can_be_switched_off(
+    hass: HomeAssistant, setup, aioclient_mock: AiohttpClientMocker
+) -> None:
+    assert hass.states.get("select.nixie_clock_lamps_at_night").state == "dimmed"
+
+    await hass.services.async_call(
+        "select", "select_option", {ATTR_ENTITY_ID: "select.nixie_clock_lamps_at_night", "option": "off"}, blocking=True
+    )
+
+    assert saved_forms(aioclient_mock, "/save-settings")[-1]["night_hv_off"] == "1"
+    assert hass.states.get("select.nixie_clock_lamps_at_night").state == "off"
 
 
 async def test_consecutive_changes_keep_each_other(

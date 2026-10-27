@@ -18,6 +18,7 @@ CLOCK: dict[str, dict[str, Any]] = {
     "/get-settings": {
         "night_from": "22:00",
         "night_to": "07:00",
+        "night_hv_off": 0,
         "digit_effect": 2,
         "trans_effect": 3,
         "trans_freq": 0,

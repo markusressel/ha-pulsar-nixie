@@ -117,6 +117,13 @@
           "flip_sequence": "Flip in sequence"
         }
       },
+      "lamps_at_night": {
+        "name": "Lamps at night",
+        "state": {
+          "dimmed": "Dimmed",
+          "off": "Switched off"
+        }
+      },
       "dot_mode": {
         "name": "Dot mode",
         "state": {
