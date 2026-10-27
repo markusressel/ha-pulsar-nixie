@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2b2f38"/>
+      <stop offset="0.5" stop-color="#1a1d23"/>
+      <stop offset="1" stop-color="#2b2f38"/>
+    </linearGradient>
+  </defs>
+  <!-- glass -->
+  <path d="M70 204 V84 C70 40 96 16 128 8 C160 16 186 40 186 84 V204 Z" fill="url(#glass)" stroke="#8a90a0" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M84 92 C84 62 98 42 116 30" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="5" stroke-linecap="round"/>
+  <!-- glowing digit 8 -->
+  <g fill="none" stroke="#ff8a1f" stroke-width="9" stroke-linecap="round" filter="url(#glow)">
+    <circle cx="128" cy="84" r="23"/>
+    <circle cx="128" cy="138" r="28"/>
+  </g>
+  <!-- base and pins -->
+  <rect x="62" y="200" width="132" height="26" rx="6" fill="#454a55"/>
+  <g stroke="#8a90a0" stroke-width="6" stroke-linecap="round">
+    <path d="M96 226 V246"/>
+    <path d="M128 226 V246"/>
+    <path d="M160 226 V246"/>
+  </g>
+</svg>
