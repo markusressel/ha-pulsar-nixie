@@ -157,6 +157,20 @@
         }
       }
     },
+    "sensor": {
+      "temperature": {
+        "name": "Temperature"
+      },
+      "humidity": {
+        "name": "Humidity"
+      },
+      "pressure": {
+        "name": "Pressure"
+      },
+      "wifi_signal": {
+        "name": "Wi-Fi signal"
+      }
+    },
     "switch": {
       "hour_beep": {
         "name": "Hour beep"

@@ -36,6 +36,15 @@ CLOCK: dict[str, dict[str, Any]] = {
     "/get-repair-settings": {"repair_mode": 0, "repair_dig_num": 0, "repair_val": 0, "repair_period": 60000},
     "/get-version": {"version": "6c3sq-1.2.0"},
     "/get-network-settings": {"wifi_mode": 1, "ssid": "home", "ssid_list": ["home"], "hostname": "nixie-clock"},
+    "/api/sensors": {
+        "temperature": 25.0,
+        "humidity": 35.8,
+        "pressure": 1014.2,
+        "sensor": "BME280",
+        "rssi": -68,
+        "uptime": 2477,
+        "version": "6c3sq-1.4.0",
+    },
 }
 
 
@@ -48,11 +57,19 @@ def auto_enable_custom_integrations(enable_custom_integrations: None) -> Generat
 def clock(aioclient_mock: AiohttpClientMocker) -> dict[str, dict[str, Any]]:
     """The clock's settings: change them to change what it reports."""
     settings = deepcopy(CLOCK)
-    for path in settings:
-        aioclient_mock.get(f"{URL}{path}", json=settings[path])
+    mock_clock(aioclient_mock, settings)
+    return settings
+
+
+def mock_clock(aioclient_mock: AiohttpClientMocker, settings: dict[str, dict[str, Any] | None]) -> None:
+    """Answers with the settings, a path set to None is not found (like on firmware without it)."""
+    for path, value in settings.items():
+        if value is None:
+            aioclient_mock.get(f"{URL}{path}", status=404)
+        else:
+            aioclient_mock.get(f"{URL}{path}", json=value)
     for path in ("/save-time", "/save-settings", "/save-led-settings", "/save-timer-settings", "/save-repair-settings"):
         aioclient_mock.post(f"{URL}{path}")
-    return settings
 
 
 @pytest.fixture
